@@ -11,7 +11,7 @@ angular
   var listState = {
     name: 'list',
     url: '/list',
-    template: '<list></split>'
+    template: '<list></list>'
   };
 
   $urlRouterProvider.otherwise('/');

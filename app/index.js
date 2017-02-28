@@ -1,1 +1,1 @@
-angular.module('sorteio', ['ui.router', 'ui.bootstrap', 'forerunnerdb']);
+angular.module('sorteio', ['ui.router', 'ui.bootstrap', 'toastr']);

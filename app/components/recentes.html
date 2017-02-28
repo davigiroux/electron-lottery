@@ -1,15 +1,29 @@
 <div class="recentes">
-  <h1>Cadastros Recentes</h1>
+  <header class="row">
+    <div class="col-md-9">
+      <h1>Cadastros ({{$ctrl.lista.length}}) </h1>
+    </div>
+    <div class="col-md-3">
+      <input type="text" class="form-control" placeholder="Buscar..." ng-model="$ctrl.busca">
+    </div>
+  </header>
+  
   <hr>
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
     <tbody>
-      <tr ng-repeat="c in $ctrl.lista track by $index">
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Telefone</th>
+        <th></th>
+      </tr>
+      <tr ng-repeat="c in $ctrl.lista | filter:$ctrl.busca | orderBy:'nome' track by $index">
         <td>{{c.nome}}</td>
         <td>{{c.email}}</td>
         <td>{{c.telefone}}</td>
         <td>
-          <a href="" ng-click="$ctrl.onEdit({id: $index})"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
-          <a href="" ng-click="$ctrl.onRemove({id: $index})"><i class="glyphicon glyphicon-trash"></i></a>
+          <a href="" ng-click="$ctrl.onEdit({item: c})"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
+          <a href="" ng-click="$ctrl.onRemove({item: c})"><i class="glyphicon glyphicon-trash"></i></a>
         </td>
       </tr>
       <tr ng-if="$ctrl.lista.length === 0">

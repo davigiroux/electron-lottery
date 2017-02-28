@@ -3,31 +3,30 @@ angular
 .component('formulario', {
   templateUrl: 'app/components/formulario.html',
   bindings: {
-    current:'<',
-    onSave: '&',
-    onUpdate: '&'
+    resolve:'<',
+    close: '&',
+    dismiss: '&'
   },
   controller: function() {
     var $ctrl = this;
     $ctrl.edit = false;
     $ctrl.data = {};
     $ctrl.handleSave = function() {
-      if ($ctrl.edit) {
-        $ctrl.onUpdate({data: $ctrl.data});
-        $ctrl.edit = false;
-      } else {
-        $ctrl.onSave({data: $ctrl.data});
-      }
-      $ctrl.data = {};
+      $ctrl.close({$value: {
+        data: $ctrl.data,
+        edit: $ctrl.edit
+      }});
     };
     $ctrl.handleCancel = function() {
       $ctrl.edit = false;
       $ctrl.data = {};
+      $ctrl.dismiss();
     };
     $ctrl.$onChanges = function(nextObject) {
-      if (nextObject.current.currentValue) {
+      var current = nextObject.resolve.currentValue.current;
+      if (current) {
         $ctrl.edit = true;
-        $ctrl.data = nextObject.current.currentValue;
+        $ctrl.data = angular.copy(current);
       }
     };
   }

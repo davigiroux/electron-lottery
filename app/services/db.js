@@ -1,6 +1,6 @@
 angular
 .module('sorteio')
-.factory('db', function($rootScope) {
+.factory('db', function($rootScope, toastr) {
   var DEFAULT_KEY = 'sorteios';
 
   var db = {
@@ -18,6 +18,7 @@ angular
     var result = db.load(key);
     result.push(data);
     db.persist(result, key);
+    toastr.success('Cadastro salvo!');
   };
 
   db.persist = function(data, key) {
@@ -30,6 +31,7 @@ angular
     var result = db.load(key);
     result.splice(index, 1);
     db.persist(result, key);
+    toastr.info('Cadastro removido!');
   };
 
   db.update = function(data, index, key) {
@@ -37,6 +39,7 @@ angular
     var result = db.load(key);
     result[index] = data;
     db.persist(result, key);
+    toastr.success('Cadastro atualizado!');
   }
 
   return db;

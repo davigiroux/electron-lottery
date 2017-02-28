@@ -5,12 +5,12 @@
       <a class="navbar-brand" ui-sref="/">Sorteio</a>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a ui-sref="split">Cadastro</a></li>
-        <li><a ui-sref="list">Lista</a></li>
-        <li><a href="#">Sorteio</a></li>
-      </ul>
+
+    <div class="navbar-form navbar-right">
+      <button class="btn btn-warning">Sorteio</button>
+      <button class="btn btn-primary" ng-click="$ctrl.handleAdd()">Novo Cadastro</button>
     </div>
+
+
   </div>
 </nav>
