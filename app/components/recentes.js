@@ -4,7 +4,8 @@ angular
   templateUrl: 'app/components/recentes.html',
   bindings: {
     lista: '=',
-    onRemove: '&'
+    onRemove: '&',
+    onEdit: '&'
   },
   controller: function(){ }
 })

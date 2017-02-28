@@ -32,5 +32,12 @@ angular
     db.persist(result, key);
   };
 
+  db.update = function(data, index, key) {
+    key = key || DEFAULT_KEY;
+    var result = db.load(key);
+    result[index] = data;
+    db.persist(result, key);
+  }
+
   return db;
 });

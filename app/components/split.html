@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-md-6">
-    <formulario on-save="$ctrl.save(data)"></formulario>
+    <formulario current="$ctrl.current" on-update="$ctrl.update(data)" on-save="$ctrl.save(data)"></formulario>
   </div>
   <div class="col-md-6">
-    <recentes lista="$ctrl.lista" on-remove="$ctrl.remove(id)"></recentes>
+    <recentes lista="$ctrl.lista" on-remove="$ctrl.remove(id)" on-edit="$ctrl.edit(id)"></recentes>
   </div>
 </div>
