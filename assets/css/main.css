@@ -1,5 +1,5 @@
 body {
-  padding: 20px;
+  padding: 90px 20px 20px;
   margin: 0;
 }
 
@@ -8,10 +8,25 @@ h1 {
   margin-bottom: 20px;
 }
 
+.navigation {
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+  z-index: 100;
+}
+
 .formulario {
   padding: 0px 40px 0px;
 }
-
+.recentes {
+  position: relative;
+  z-index: 1;
+}
 .recentes h1 {
   margin: 0;
+}
+
+.recentes .table td {
+  font-size: 20px;
 }

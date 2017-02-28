@@ -1,9 +1,9 @@
 <div class="recentes">
   <header class="row">
-    <div class="col-md-9">
+    <div class="col-md-9 col-sm-6">
       <h1>Cadastros ({{$ctrl.lista.length}}) </h1>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 col-sm-6">
       <input type="text" class="form-control" placeholder="Buscar..." ng-model="$ctrl.busca">
     </div>
   </header>
@@ -18,12 +18,12 @@
         <th></th>
       </tr>
       <tr ng-repeat="c in $ctrl.lista | filter:$ctrl.busca | orderBy:'nome' track by $index">
-        <td>{{c.nome}}</td>
+        <td><b>{{c.nome}}</b></td>
         <td>{{c.email}}</td>
         <td>{{c.telefone}}</td>
         <td>
-          <a href="" ng-click="$ctrl.onEdit({item: c})"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
-          <a href="" ng-click="$ctrl.onRemove({item: c})"><i class="glyphicon glyphicon-trash"></i></a>
+          <a href="" ng-click="$ctrl.onEdit({item: c})" class="btn btn-default" title="Editar cadastro"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
+          <a href="" ng-click="$ctrl.onRemove({item: c})" class="btn btn-default" title"Remover cadastro"><i class="glyphicon glyphicon-trash"></i></a>
         </td>
       </tr>
       <tr ng-if="$ctrl.lista.length === 0">
