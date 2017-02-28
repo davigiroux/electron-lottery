@@ -1,6 +1,20 @@
 <div class="recentes">
   <h1>Cadastros Recentes</h1>
-  <div ng-repeat="c in $ctrl.lista">
-    {{c.nome}}
-  </div>
+  <hr>
+  <table class="table table-striped">
+    <tbody>
+      <tr ng-repeat="c in $ctrl.lista track by $index">
+        <td>{{c.nome}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.telefone}}</td>
+        <td>
+          <a href=""><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
+          <a href="" ng-click="$ctrl.onRemove({id: $index})"><i class="glyphicon glyphicon-trash"></i></a>
+        </td>
+      </tr>
+      <tr ng-if="$ctrl.lista.length === 0">
+        <td>Não existem cadastros</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

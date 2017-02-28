@@ -1,6 +1,6 @@
 angular
 .module('sorteio')
-.factory('db', function() {
+.factory('db', function($rootScope) {
   var DEFAULT_KEY = 'sorteios';
 
   var db = {
@@ -10,13 +10,26 @@ angular
   db.load = function(key) {
     var result = localStorage.getItem(key || DEFAULT_KEY);
     result = result || '[]';
-    return db.data[key];
+    return JSON.parse(result);
   };
 
   db.save = function(data, key) {
+    key = key || DEFAULT_KEY;
     var result = db.load(key);
     result.push(data);
-    localStorage.setItem(key || DEFAULT_KEY, JSON.stringify(result));
+    db.persist(result, key);
+  };
+
+  db.persist = function(data, key) {
+    localStorage.setItem(key || DEFAULT_KEY, JSON.stringify(data));
+    $rootScope.$broadcast('db::change', data);
+  }
+
+  db.remove = function(index, key) {
+    key = key || DEFAULT_KEY;
+    var result = db.load(key);
+    result.splice(index, 1);
+    db.persist(result, key);
   };
 
   return db;
