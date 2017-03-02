@@ -7,5 +7,8 @@ angular
     this.handleAdd = function() {
       $rootScope.$broadcast('add::item');
     };
+    this.handleLottery = function() {
+      $rootScope.$broadcast('sorteio');
+    };
   }
 })

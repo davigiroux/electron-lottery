@@ -18,6 +18,7 @@ angular
     var result = db.load(key);
     result.push(data);
     db.persist(result, key);
+    if(key == 'cadastros')
     toastr.success('Cadastro salvo!');
   };
 

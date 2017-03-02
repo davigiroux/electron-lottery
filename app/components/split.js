@@ -57,6 +57,25 @@ angular
       }, function () {});
     };
 
+    $ctrl.showSorteio = function() {
+      var resolve = null;
+      if ($ctrl.current) resolve = {current: $ctrl.current};
+
+      var modalInstance = $uibModal.open({
+        animation: false,
+        component: 'lottery',
+        resolve: resolve
+      });
+
+      modalInstance.result.then(function (result) {
+        if (result.edit) {
+          $ctrl.update(result.data);
+        } else {
+          $ctrl.save(result.data);
+        }
+      }, function () {});
+    };
+
     $ctrl.$onInit = function() {
       $ctrl.load();
       $rootScope.$on('db::change', $ctrl.load);
@@ -64,6 +83,9 @@ angular
         $ctrl.current = null;
         $ctrl.currentIndex = null;
         $ctrl.show();
+      });
+      $rootScope.$on('sorteio', function() {
+        $ctrl.showSorteio();
       });
     }
   }

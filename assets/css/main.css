@@ -16,7 +16,7 @@ h1 {
   z-index: 100;
 }
 
-.formulario {
+.formulario{
   padding: 0px 40px 0px;
 }
 .recentes {
@@ -29,4 +29,34 @@ h1 {
 
 .recentes .table td {
   font-size: 1.2em;
+}
+
+.lottery{
+  padding: 0px 40px 0px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.resultado-sorteio {
+  position: relative;
+  padding: 10px !important;
+  text-align: center;
+}
+
+.resultado-sorteio > i {
+  position:relative;
+  top: calc(40% - 10px);
+}
+
+.resultado-sorteio > table {
+  text-align: left;
+}
+
+.resultado-sorteio > h1, h2, h3{
+  padding: 0;
+  margin: 0;
+}
+
+a:hover{
+  cursor: pointer;
 }
