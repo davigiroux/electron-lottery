@@ -1,40 +1,35 @@
-# electron-quick-start
+# Sorteio APP 
+## Lottery app
 
-**Clone and run for a quick way to see Electron in action.**
+**Passo-a-passo de como instalar o aplicativo.**
 
-This is a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start) within the Electron documentation.
+Este é um aplicativo feito com [Electron](https://electron.atom.io/), onde são cadastradas pessoas e feito um sorteio entre elas!
 
-**Use this app along with the [Electron API Demos](http://electron.atom.io/#get-started) app for API code examples to help you get started.**
+## Requisitos
 
-A basic Electron application needs just these files:
+Para instalarmos o aplicativo, são necessários os seguintes programas:
+ -[GIT](https://git-scm.com/downloads)
+ -[Node.js](https://nodejs.org/en/download/)
 
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
 
-You can learn more about each of these components within the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start).
+##Instalação
 
-## To Use
-
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+Instalados os programas necessários, vamos então clonar o repositório do GitHub e instalar as dependências necessárias.
 
 ```bash
-# Clone this repository
-git clone https://github.com/electron/electron-quick-start
-# Go into the repository
-cd electron-quick-start
-# Install dependencies
+# Clonar o repositório
+git clone https://github.com/davigiroux/electron-lottery.git
+# Entrar na pasta do repositório
+cd electron-lottery
+# Instalar dependências
 npm install
-# Run the app
+# Instalar o bower globalmente
+npm install -g bower
+# Instalar dependências do bower
+bower install
+# Executar o app
 npm start
 ```
 
-Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/).
-
-## Other Example Apps
-
-For more example apps, see the
-[list of boilerplates](http://electron.atom.io/community/#boilerplates)
-created by the awesome electron community.
-
-#### License [CC0 1.0 (Public Domain)](LICENSE.md)
+O aplicativo então deve estar aberto e funcionando!
+- Davi G. Alvarenga
