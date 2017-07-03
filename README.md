@@ -1,5 +1,5 @@
 # Sorteio APP 
-## Lottery app
+Lottery app
 
 **Passo-a-passo de como instalar o aplicativo.**
 
@@ -8,11 +8,12 @@ Este é um aplicativo feito com [Electron](https://electron.atom.io/), onde são
 ## Requisitos
 
 Para instalarmos o aplicativo, são necessários os seguintes programas:
- -[GIT](https://git-scm.com/downloads)
- -[Node.js](https://nodejs.org/en/download/)
+
+ * [GIT](https://git-scm.com/downloads)
+ * [Node.js](https://nodejs.org/en/download/)
 
 
-##Instalação
+## Instalação
 
 Instalados os programas necessários, vamos então clonar o repositório do GitHub e instalar as dependências necessárias.
 
