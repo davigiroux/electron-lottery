@@ -1,5 +1,4 @@
 # Sorteio APP 
-Lottery app
 
 **Passo-a-passo de como instalar o aplicativo.**
 
