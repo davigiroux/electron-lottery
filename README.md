@@ -14,7 +14,7 @@ Para instalarmos o aplicativo, são necessários os seguintes programas:
 
 ## Instalação
 
-Instalados os programas necessários, vamos então clonar o repositório do GitHub e instalar as dependências necessárias.
+Com os programas instalados, vamos então clonar o repositório do GitHub e instalar as dependências utilizando o _npm_ e _bower_.
 
 ```bash
 # Clonar o repositório
